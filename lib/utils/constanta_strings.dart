@@ -1,5 +1,7 @@
 const welcome = "Selamat Datang";
 const subWelcome = "Silahkan masukan email dan password untuk akses aplikasi";
+const createAccount = "Buat Akun";
+const subCreateAccount = "Lengkapi form berikut dengan identitas Anda";
 const emailHint = "Email";
 const passHint = "Password";
 const nimHint = "NIM";
