@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:notifskripsiui/models/data_model.dart';
-import 'package:notifskripsiui/ui/home/detail/detail_home_screen.dart';
+import 'package:notifskripsiui/ui/schedule/detail/detail_schedule_screen.dart';
 import 'package:notifskripsiui/utils/constanta_colors.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
-class HomeBody extends StatelessWidget {
+class ScheduleBody extends StatelessWidget {
   final DateFormat dateFormat = DateFormat.yMMMMd();
 
   @override
@@ -17,25 +17,43 @@ class HomeBody extends StatelessWidget {
             height: getProportionateScreenHeight(24.0),
           ),
           ...List.generate(
-              dataAtHome.length,
-              (index) => buildItemContainer(context, dataAtHome[index].title,
-                  dataAtHome[index].desc, dataAtHome[index].dateTime))
+              dataAtSchedule.length,
+              (index) => buildItemContainer(
+                  context,
+                  dataAtSchedule[index].name,
+                  dataAtSchedule[index].nim,
+                  dataAtSchedule[index].title,
+                  dataAtSchedule[index].teacher1,
+                  dataAtSchedule[index].otherTeacher,
+                  dataAtSchedule[index].place,
+                  dataAtSchedule[index].dateTime))
         ],
       ),
     );
   }
 
   GestureDetector buildItemContainer(
-      BuildContext context, String title, String desc, DateTime dateTime) {
+      BuildContext context,
+      String name,
+      String nim,
+      String title,
+      String teacher1,
+      String otherTeacher,
+      String place,
+      DateTime dateTime) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
                 fullscreenDialog: true,
-                builder: (_) => DetailHomeScreen(
+                builder: (_) => DetailScheduleScreen(
+                      name: name,
+                      nim: nim,
                       title: title,
-                      desc: desc,
+                      teacher1: teacher1,
+                      otherTeacher: otherTeacher,
+                      place: place,
                       dateTime: dateTime,
                     )));
       },
@@ -55,7 +73,7 @@ class HomeBody extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                title,
+                name,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
@@ -67,8 +85,8 @@ class HomeBody extends StatelessWidget {
                 height: getProportionateScreenHeight(8.0),
               ),
               Text(
-                desc,
-                maxLines: 2,
+                nim,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: textColor2, fontSize: 16.0),
               ),
@@ -78,9 +96,9 @@ class HomeBody extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  dateFormat.format(dateTime),
-                  textAlign: TextAlign.right,
+                  title,
                   maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(color: textColor2, fontSize: 16.0),
                 ),
               ),

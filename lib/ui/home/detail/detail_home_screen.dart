@@ -21,7 +21,7 @@ class DetailHomeScreen extends StatelessWidget {
         margin: EdgeInsets.only(
             left: getProportionateScreenWidth(24.0),
             right: getProportionateScreenWidth(24.0),
-            bottom: getProportionateScreenWidth(16.0)),
+            bottom: getProportionateScreenWidth(24.0)),
         decoration: BoxDecoration(
             color: textFieldAndCardColor,
             borderRadius:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notifskripsiui/ui/schedule/schedule_body.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
 class ScheduleScreen extends StatelessWidget {
@@ -6,9 +7,7 @@ class ScheduleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      body: Center(
-        child: Text("Schedule"),
-      ),
+      body: ScheduleBody(),
     );
   }
 }
