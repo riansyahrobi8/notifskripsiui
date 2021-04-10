@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notifskripsiui/routing/constanta_route.dart';
 import 'package:notifskripsiui/ui/home/home_body.dart';
 import 'package:notifskripsiui/ui/note/note_screen.dart';
 import 'package:notifskripsiui/ui/schedule/schedule_screen.dart';
@@ -51,14 +52,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       : noteMenu,
               style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
             ),
-            ClipRRect(
-                borderRadius: BorderRadius.circular(1000.0),
-                child: Image.asset(
-                  "assets/images/profile.png",
-                  width: getProportionateScreenWidth(56.0),
-                  height: getProportionateScreenWidth(56.0),
-                  fit: BoxFit.cover,
-                ))
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, profile);
+              },
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(1000.0),
+                  child: Image.asset(
+                    "assets/images/profile.png",
+                    width: getProportionateScreenWidth(56.0),
+                    height: getProportionateScreenWidth(56.0),
+                    fit: BoxFit.cover,
+                  )),
+            )
           ],
         ),
       ),
