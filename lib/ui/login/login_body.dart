@@ -53,7 +53,9 @@ class LoginBody extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, home);
+              },
               color: accentColor,
               elevation: 0.0,
               shape: RoundedRectangleBorder(

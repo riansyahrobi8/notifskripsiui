@@ -104,7 +104,7 @@ class _RegisterBodyState extends State<RegisterBody> {
                 .toList(),
             onChanged: (_) {},
             elevation: 0,
-            dropdownColor: accentColor,
+            dropdownColor: backgroundColor,
             iconDisabledColor: primaryColor,
             iconEnabledColor: primaryColor,
             focusColor: textFieldAndCardColor,
