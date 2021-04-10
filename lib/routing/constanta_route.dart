@@ -4,3 +4,4 @@ const register = "/register";
 const home = "/home";
 const schedule = "/schedule";
 const note = "/note";
+const profile = "/profile";

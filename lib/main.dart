@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:notifskripsiui/routing/constanta_route.dart';
 import 'package:notifskripsiui/routing/routing.dart';
+import 'package:notifskripsiui/utils/constanta_colors.dart';
 import 'package:notifskripsiui/utils/custom_theme.dart';
 
 void main() => runApp(MyApp());
@@ -19,6 +20,10 @@ class _MyAppState extends State<MyApp> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.light,
+        statusBarColor: Colors.transparent));
   }
 
   @override
@@ -26,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: myTheme(),
-      initialRoute: home,
+      initialRoute: splash,
       onGenerateRoute: Routes.generateRoute,
     );
   }

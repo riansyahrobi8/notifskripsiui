@@ -22,7 +22,7 @@ TextTheme textTheme() {
 AppBarTheme appBarTheme() {
   return AppBarTheme(
       color: backgroundColor,
-      brightness: Brightness.light,
+      // brightness: Brightness.light,
       elevation: 0,
       iconTheme: IconThemeData(color: primaryColor, size: 24.0),
       textTheme: textTheme());

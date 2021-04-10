@@ -1,46 +1,23 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:notifskripsiui/models/data_model.dart';
-import 'package:notifskripsiui/ui/home/detail/detail_home_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:notifskripsiui/utils/constanta_colors.dart';
-import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
-class HomeBody extends StatelessWidget {
+class DetailHomeScreen extends StatelessWidget {
+  final String title;
+  final String desc;
+  final DateTime dateTime;
   final DateFormat dateFormat = DateFormat.yMMMMd();
+
+  DetailHomeScreen({Key key, this.title, this.desc, this.dateTime})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: getProportionateScreenHeight(24.0),
-          ),
-          ...List.generate(
-              dataAtHome.length,
-              (index) => buildItemContainer(context, dataAtHome[index].title,
-                  dataAtHome[index].desc, dataAtHome[index].dateTime))
-        ],
-      ),
-    );
-  }
-
-  GestureDetector buildItemContainer(
-      BuildContext context, String title, String desc, DateTime dateTime) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                fullscreenDialog: true,
-                builder: (_) => DetailHomeScreen(
-                      title: title,
-                      desc: desc,
-                      dateTime: dateTime,
-                    )));
-      },
-      child: Container(
+    SizeConfig().init(context);
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
         margin: EdgeInsets.only(
             left: getProportionateScreenWidth(24.0),
             right: getProportionateScreenWidth(24.0),
@@ -57,8 +34,6 @@ class HomeBody extends StatelessWidget {
             children: [
               Text(
                 title,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: textColor1,
                   fontSize: 22.0,
@@ -69,8 +44,6 @@ class HomeBody extends StatelessWidget {
               ),
               Text(
                 desc,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: textColor2, fontSize: 16.0),
               ),
               SizedBox(

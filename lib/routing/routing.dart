@@ -4,6 +4,7 @@ import 'package:notifskripsiui/routing/constanta_route.dart';
 import 'package:notifskripsiui/ui/home/home_screen.dart';
 import 'package:notifskripsiui/ui/login/login_screen.dart';
 import 'package:notifskripsiui/ui/note/note_screen.dart';
+import 'package:notifskripsiui/ui/profile/profile_screen.dart';
 import 'package:notifskripsiui/ui/register/register_screen.dart';
 import 'package:notifskripsiui/ui/schedule/schedule_screen.dart';
 import 'package:notifskripsiui/ui/splash/splash_screen.dart';
@@ -21,6 +22,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => ScheduleScreen());
       case note:
         return MaterialPageRoute(builder: (_) => NoteScreen());
+      case profile:
+        return MaterialPageRoute(builder: (_) => ProfileScreen());
       default:
         return MaterialPageRoute(builder: (_) => SplashScreen());
     }
