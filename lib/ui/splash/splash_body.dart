@@ -20,7 +20,8 @@ class SplashBody extends StatelessWidget {
         Center(
           child: Text(
             "My App",
-            style: TextStyle(fontSize: 44.0, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: textColor1, fontSize: 44.0, fontWeight: FontWeight.bold),
           ),
         ),
         Positioned(

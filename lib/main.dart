@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:notifskripsiui/routing/constanta_route.dart';
 import 'package:notifskripsiui/routing/routing.dart';
-import 'package:notifskripsiui/utils/constanta_colors.dart';
 import 'package:notifskripsiui/utils/custom_theme.dart';
 
 void main() => runApp(MyApp());

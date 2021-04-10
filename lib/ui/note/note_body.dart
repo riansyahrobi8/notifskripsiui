@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:notifskripsiui/models/data_model.dart';
-import 'package:notifskripsiui/ui/schedule/detail/detail_schedule_screen.dart';
+import 'package:notifskripsiui/ui/note/detail/detail_note_screen.dart';
 import 'package:notifskripsiui/utils/constanta_colors.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
-class ScheduleBody extends StatelessWidget {
+class NoteBody extends StatelessWidget {
   final DateFormat dateFormat = DateFormat.yMMMMd();
 
   @override
@@ -17,44 +17,31 @@ class ScheduleBody extends StatelessWidget {
             height: getProportionateScreenHeight(24.0),
           ),
           ...List.generate(
-              dataAtSchedule.length,
+              dataAtNote.length,
               (index) => buildItemContainer(
                   context,
-                  dataAtSchedule[index].name,
-                  dataAtSchedule[index].nim,
-                  dataAtSchedule[index].title,
-                  dataAtSchedule[index].teacher1,
-                  dataAtSchedule[index].otherTeacher,
-                  dataAtSchedule[index].place,
-                  dataAtSchedule[index].dateTime))
+                  dataAtNote[index].dateTime,
+                  dataAtNote[index].titleNote,
+                  dataAtNote[index].notes,
+                  dataAtNote[index].notes2))
         ],
       ),
     );
   }
 
-  GestureDetector buildItemContainer(
-      BuildContext context,
-      String name,
-      String nim,
-      String title,
-      String teacher1,
-      String otherTeacher,
-      String place,
-      DateTime dateTime) {
+  GestureDetector buildItemContainer(BuildContext context, DateTime dateTime,
+      String titleNote, List notes1, List notes2) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
                 fullscreenDialog: true,
-                builder: (_) => DetailScheduleScreen(
-                      name: name,
-                      nim: nim,
-                      title: title,
-                      teacher1: teacher1,
-                      otherTeacher: otherTeacher,
-                      place: place,
+                builder: (_) => DetailNoteScreen(
                       dateTime: dateTime,
+                      titleNote: titleNote,
+                      notes: notes1,
+                      notes2: notes2,
                     )));
       },
       child: Container(
@@ -74,7 +61,15 @@ class ScheduleBody extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                name,
+                dateFormat.format(dateTime),
+                maxLines: 1,
+                style: TextStyle(color: textColor2, fontSize: 16.0),
+              ),
+              SizedBox(
+                height: getProportionateScreenHeight(4.0),
+              ),
+              Text(
+                titleNote,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
@@ -83,25 +78,13 @@ class ScheduleBody extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: getProportionateScreenHeight(8.0),
+                height: getProportionateScreenHeight(16.0),
               ),
               Text(
-                nim,
+                "1. ${notes1[0]}",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: textColor2, fontSize: 16.0),
-              ),
-              SizedBox(
-                height: getProportionateScreenHeight(16.0),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(color: textColor2, fontSize: 16.0),
-                ),
               ),
             ],
           ),

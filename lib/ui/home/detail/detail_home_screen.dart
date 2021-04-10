@@ -18,6 +18,7 @@ class DetailHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        width: double.infinity,
         margin: EdgeInsets.only(
             left: getProportionateScreenWidth(24.0),
             right: getProportionateScreenWidth(24.0),

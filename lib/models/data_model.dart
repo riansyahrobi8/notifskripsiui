@@ -50,6 +50,18 @@ class NoteModel {
   final DateTime dateTime;
   final String titleNote;
   final List<String> notes;
+  final List<String> notes2;
 
-  NoteModel(this.dateTime, this.titleNote, this.notes);
+  NoteModel(this.dateTime, this.titleNote, this.notes, this.notes2);
 }
+
+List<NoteModel> dataAtNote = [
+  NoteModel(DateTime.now(), "Catatan Proposal", [lorem, lorem],
+      [lorem, lorem, lorem]),
+  NoteModel(DateTime.now(), "Catatan Pra Skripsi", [lorem, lorem, lorem],
+      [lorem, lorem, lorem, lorem, lorem]),
+  NoteModel(
+      DateTime.now(), "Catatan Skripsi", [lorem, lorem], [lorem, lorem, lorem]),
+  NoteModel(
+      DateTime.now(), "Catatan Revisi Skripsi", [lorem, lorem], [lorem, lorem]),
+];
