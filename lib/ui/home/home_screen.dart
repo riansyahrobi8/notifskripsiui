@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     BottomNavigationBarItem(
         icon: Icon(Icons.home_rounded, size: 20.0), label: homeMenu),
     BottomNavigationBarItem(
-        icon: Icon(Icons.edit_rounded, size: 18.0), label: noteMenu),
+        icon: Icon(Icons.receipt_long_rounded, size: 18.0), label: noteMenu),
   ];
 
   @override
@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -73,8 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.symmetric(
             horizontal: getProportionateScreenWidth(24.0),
             vertical: getProportionateScreenWidth(16.0)),
-        child: SizedBox(
+        child: Container(
           height: getProportionateScreenWidth(72.0),
+          color: Colors.transparent,
           child: ClipRRect(
             borderRadius:
                 BorderRadius.circular(getProportionateScreenWidth(36)),

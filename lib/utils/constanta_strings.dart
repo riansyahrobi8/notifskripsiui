@@ -14,6 +14,7 @@ const letsRegister = "Yuk Daftar!";
 
 const btnLogin = "Masuk";
 const btnRegister = "Daftar";
+const btnLogout = "Keluar";
 
 const homeMenu = "Info Kampus";
 const scheduleMenu = "Jadwal";
