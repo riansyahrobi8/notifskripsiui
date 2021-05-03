@@ -6,6 +6,8 @@ import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
 class LoginBody extends StatelessWidget {
+  final String user = "Admin";
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,7 +56,8 @@ class LoginBody extends StatelessWidget {
             width: double.infinity,
             child: RaisedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, home);
+                Navigator.pushReplacementNamed(
+                    context, user == "Admin" ? dashboard : home);
               },
               color: accentColor,
               elevation: 0.0,

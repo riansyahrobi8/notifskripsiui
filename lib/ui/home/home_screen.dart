@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         label: scheduleMenu),
     BottomNavigationBarItem(
-        icon: Icon(Icons.home_rounded, size: 20.0), label: homeMenu),
+        icon: Icon(Icons.info_outline_rounded, size: 20.0), label: homeMenu),
     BottomNavigationBarItem(
         icon: Icon(Icons.receipt_long_rounded, size: 18.0), label: noteMenu),
   ];
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: _listPage[_currentIndex],
+      body: SafeArea(child: _listPage[_currentIndex]),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: getProportionateScreenWidth(24.0),

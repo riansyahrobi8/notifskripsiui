@@ -20,6 +20,15 @@ const homeMenu = "Info Kampus";
 const scheduleMenu = "Jadwal";
 const noteMenu = "Catatan";
 
+const subAdminInfoCampus =
+    "Kamu bisa melihat, menambah, mengubah dan menghapus data informasi mengenai kampus";
+const subAdminSchedule =
+    "Kamu bisa melihat, menambah, mengubah dan menghapus data penjadwalan";
+const subAdminNote =
+    "Kamu bisa melihat, menambah, mengubah dan menghapus data catatan";
+
+const dashboardMenu = "Dashboard";
+
 const lorem =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
