@@ -16,7 +16,7 @@ const btnLogin = "Masuk";
 const btnRegister = "Daftar";
 const btnLogout = "Keluar";
 
-const homeMenu = "Info Kampus";
+const homeMenu = "Informasi Kampus";
 const scheduleMenu = "Jadwal";
 const noteMenu = "Catatan";
 
@@ -39,3 +39,7 @@ const textTeacher1 = "Dosen Pembimbing";
 const textTeacher2 = "Dosen Penguji";
 const textPlace = "Ruangan";
 const textTime = "Waktu Pelaksanaan";
+
+const add = "Tambahkan";
+const titleInfoCampusHint = "Masukan judul informasi kampus";
+const contentInfoCampusHint = "Masukan isi informasi kampus...";

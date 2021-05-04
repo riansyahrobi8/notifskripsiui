@@ -8,6 +8,7 @@ ThemeData myTheme() {
       appBarTheme: appBarTheme(),
       textTheme: textTheme(),
       fontFamily: "Poppins",
+      bottomSheetTheme: BottomSheetThemeData(backgroundColor: backgroundColor),
       visualDensity: VisualDensity.adaptivePlatformDensity);
 }
 
