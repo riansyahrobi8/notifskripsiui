@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 import 'package:notifskripsiui/models/data_model.dart';
 import 'package:notifskripsiui/ui/note/detail/detail_note_screen.dart';
@@ -18,12 +19,38 @@ class AdminNoteBody extends StatelessWidget {
           ),
           ...List.generate(
               dataAtNote.length,
-              (index) => buildItemContainer(
-                  context,
-                  dataAtNote[index].dateTime,
-                  dataAtNote[index].titleNote,
-                  dataAtNote[index].notes,
-                  dataAtNote[index].notes2))
+              (index) => Slidable(
+                    actionPane: SlidableDrawerActionPane(),
+                    secondaryActions: <Widget>[
+                      GestureDetector(
+                        onTap: () => print("Ubah"),
+                        child: Container(
+                          padding: EdgeInsets.all(24.0),
+                          decoration: BoxDecoration(
+                              color: primaryColor, shape: BoxShape.circle),
+                          child: Icon(Icons.edit_rounded, color: Colors.white),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => print("Hapus"),
+                        child: Container(
+                          padding: EdgeInsets.all(24.0),
+                          decoration: BoxDecoration(
+                              color: Colors.red, shape: BoxShape.circle),
+                          child: Icon(
+                            Icons.delete_forever_rounded,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                    child: buildItemContainer(
+                        context,
+                        dataAtNote[index].dateTime,
+                        dataAtNote[index].titleNote,
+                        dataAtNote[index].notes,
+                        dataAtNote[index].notes2),
+                  ))
         ],
       ),
     );

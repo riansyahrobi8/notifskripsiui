@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   intl: ^0.15.6
   autocomplete_textfield: ^1.7.3
+  flutter_slidable: ^0.5.7
 
 dev_dependencies:
   flutter_test:
