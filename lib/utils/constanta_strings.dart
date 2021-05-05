@@ -43,3 +43,11 @@ const textTime = "Waktu Pelaksanaan";
 const add = "Tambahkan";
 const titleInfoCampusHint = "Masukan judul informasi kampus";
 const contentInfoCampusHint = "Masukan isi informasi kampus...";
+const titleNoteHint = "Masukan judul catatan";
+const contentTeacher1Hint = "Masukan catatan dari Dosen Pembimbing";
+const contentTeacher2Hint = "Masukan catatan dari Dosen Penguji";
+const searchStudent = "Masukan NIM mahasiswa...";
+const titleScheduleHint = "Masukan judul penelitian";
+
+const choosePlace = "Pilih Tempat";
+const chooseType = "Pilih Tipe";

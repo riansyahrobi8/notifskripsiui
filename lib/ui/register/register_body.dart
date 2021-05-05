@@ -104,12 +104,11 @@ class _RegisterBodyState extends State<RegisterBody> {
                 .toList(),
             onChanged: (_) {},
             elevation: 0,
-            dropdownColor: backgroundColor,
             iconDisabledColor: primaryColor,
             iconEnabledColor: primaryColor,
             focusColor: textFieldAndCardColor,
             hint: Text(
-              student,
+              chooseType,
               style: TextStyle(color: textColor2),
             ),
             decoration: InputDecoration(

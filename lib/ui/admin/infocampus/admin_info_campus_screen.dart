@@ -18,11 +18,12 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
           title: Text(homeMenu),
         ),
         floatingActionButton: FloatingActionButton(
+          elevation: 0,
           onPressed: () {
             showModalBottomSheet(
                 context: context,
                 isScrollControlled: true,
-                builder: (_) => SingleChildScrollView(
+                builder: (BuildContext context) => SingleChildScrollView(
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0,
                             MediaQuery.of(context).viewInsets.bottom),
