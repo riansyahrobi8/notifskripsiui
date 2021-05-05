@@ -56,7 +56,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
         ),
         Text(
           "Apa saja mengenai $homeMenu",
-          style: TextStyle(fontSize: 12.0),
+          style: TextStyle(fontSize: 14.0),
         ),
         SizedBox(
           height: getProportionateScreenWidth(36.0),
@@ -65,7 +65,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
             child: TextFormField(
           keyboardType: TextInputType.text,
           decoration: buildInputDecoration(titleInfoCampusHint),
-          style: TextStyle(color: textColor2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
           height: getProportionateScreenWidth(16.0),
@@ -75,7 +75,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
           keyboardType: TextInputType.multiline,
           maxLines: 8,
           decoration: buildInputDecorationArea(contentInfoCampusHint),
-          style: TextStyle(color: textColor2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
           height: getProportionateScreenWidth(24.0),
@@ -116,7 +116,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
         fillColor: textFieldAndCardColor,
         border: InputBorder.none,
         hintText: type,
-        hintStyle: TextStyle(fontSize: 14, color: textColor2),
+        hintStyle: TextStyle(color: textColor2, fontSize: 16.0),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(1000.0),
             borderSide: BorderSide.none),
@@ -134,7 +134,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
         fillColor: textFieldAndCardColor,
         border: InputBorder.none,
         hintText: type,
-        hintStyle: TextStyle(fontSize: 14, color: textColor2),
+        hintStyle: TextStyle(color: textColor2, fontSize: 16.0),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(24.0),
             borderSide: BorderSide.none),

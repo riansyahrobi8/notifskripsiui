@@ -51,3 +51,4 @@ const titleScheduleHint = "Masukan judul penelitian";
 
 const choosePlace = "Pilih Tempat";
 const chooseType = "Pilih Tipe";
+const chooseDate = "Pilih Tanggal";

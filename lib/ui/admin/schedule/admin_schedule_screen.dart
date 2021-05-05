@@ -1,5 +1,6 @@
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:notifskripsiui/ui/admin/schedule/admin_schedule_body.dart';
 import 'package:notifskripsiui/utils/constanta_colors.dart';
 import 'package:notifskripsiui/utils/constanta_strings.dart';
@@ -11,6 +12,9 @@ class AdminScheduleScreen extends StatefulWidget {
 }
 
 class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
+  int _selectTime;
+  DateTime _selectedDate;
+  TextEditingController _textDateController = TextEditingController();
   GlobalKey<AutoCompleteTextFieldState<String>> key = new GlobalKey();
   List<String> places = [
     "U.2.1",
@@ -86,7 +90,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
         ),
         Text(
           "$scheduleMenu untuk mahasiswa yang ingin melakukan seminar",
-          style: TextStyle(fontSize: 12.0),
+          style: TextStyle(fontSize: 14.0),
         ),
         SizedBox(
           height: getProportionateScreenWidth(36.0),
@@ -120,7 +124,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
           },
           keyboardType: TextInputType.number,
           decoration: buildInputDecoration(searchStudent),
-          style: TextStyle(color: textColor2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
           height: getProportionateScreenWidth(16.0),
@@ -129,7 +133,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
             child: TextFormField(
           keyboardType: TextInputType.text,
           decoration: buildInputDecoration(titleScheduleHint),
-          style: TextStyle(color: textColor2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
           height: getProportionateScreenWidth(16.0),
@@ -138,7 +142,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
             child: TextFormField(
           keyboardType: TextInputType.text,
           decoration: buildInputDecoration(textTeacher1),
-          style: TextStyle(color: textColor2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
           height: getProportionateScreenWidth(16.0),
@@ -147,39 +151,41 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
             child: TextFormField(
           keyboardType: TextInputType.text,
           decoration: buildInputDecoration(textTeacher2),
-          style: TextStyle(color: textColor2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
           height: getProportionateScreenWidth(16.0),
         ),
         DropdownButtonFormField(
-          items: places
-              .map((String value) => DropdownMenuItem(
-                  value: value,
-                  child: Text(
-                    value,
-                    style: TextStyle(color: textColor2),
-                  )))
-              .toList(),
-          onChanged: (_) {},
-          elevation: 0,
-          iconDisabledColor: primaryColor,
-          iconEnabledColor: primaryColor,
-          focusColor: textFieldAndCardColor,
-          hint: Text(
-            choosePlace,
-            style: TextStyle(color: textColor2),
-          ),
-          decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(36.0),
-                  vertical: getProportionateScreenWidth(24.0)),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(1000.0),
-              ),
-              filled: true,
-              fillColor: textFieldAndCardColor),
+            items: places
+                .map((String value) => DropdownMenuItem(
+                    value: value,
+                    child: Text(
+                      value,
+                      style: TextStyle(color: textColor2),
+                    )))
+                .toList(),
+            onChanged: (_) {},
+            elevation: 0,
+            iconDisabledColor: primaryColor,
+            iconEnabledColor: primaryColor,
+            focusColor: textFieldAndCardColor,
+            style: TextStyle(fontSize: 16.0),
+            decoration: buildInputDecoration(choosePlace)),
+        SizedBox(
+          height: getProportionateScreenWidth(16.0),
         ),
+        Form(
+            child: TextFormField(
+                onTap: () {
+                  FocusScope.of(context).requestFocus(new FocusNode());
+                  _selectDate(context);
+                },
+                style: TextStyle(color: textColor2, fontSize: 16.0),
+                controller: _textDateController,
+                focusNode: AlwaysDisabledFocusNode(),
+                keyboardType: TextInputType.name,
+                decoration: buildInputDecoration(chooseDate))),
         SizedBox(
           height: getProportionateScreenWidth(24.0),
         ),
@@ -219,7 +225,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
         fillColor: textFieldAndCardColor,
         border: InputBorder.none,
         hintText: type,
-        hintStyle: TextStyle(fontSize: 14, color: textColor2),
+        hintStyle: TextStyle(fontSize: 16, color: textColor2),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(1000.0),
             borderSide: BorderSide.none),
@@ -227,4 +233,43 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
             borderRadius: BorderRadius.circular(1000.0),
             borderSide: BorderSide.none));
   }
+
+  _selectDate(BuildContext context) async {
+    bool _decideWhichDayToEnable(DateTime day) {
+      if (day.isAfter(DateTime.now().subtract(Duration(days: 1))) &&
+          day.weekday != 6 &&
+          day.weekday != 7) {
+        return true;
+      }
+      return false;
+    }
+
+    DateTime newSelectedDate = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2021),
+        lastDate: DateTime(2100),
+        selectableDayPredicate: _decideWhichDayToEnable,
+        builder: (context, child) => Theme(
+            data: ThemeData.light().copyWith(
+              primaryColor: primaryColor,
+              accentColor: primaryColor,
+              colorScheme: ColorScheme.light(primary: primaryColor),
+              buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary),
+            ),
+            child: child));
+    if (newSelectedDate != null) {
+      _selectedDate = newSelectedDate;
+      _textDateController
+        ..text = DateFormat.yMMMd().format(_selectedDate)
+        ..selection = TextSelection.fromPosition(TextPosition(
+            offset: _textDateController.text.length,
+            affinity: TextAffinity.upstream));
+    }
+  }
+}
+
+class AlwaysDisabledFocusNode extends FocusNode {
+  @override
+  bool get hasFocus => false;
 }
