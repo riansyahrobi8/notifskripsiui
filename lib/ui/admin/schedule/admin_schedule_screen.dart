@@ -12,10 +12,12 @@ class AdminScheduleScreen extends StatefulWidget {
 }
 
 class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
-  int _selectTime;
   DateTime _selectedDate;
-  TextEditingController _textDateController = TextEditingController();
-  GlobalKey<AutoCompleteTextFieldState<String>> key = new GlobalKey();
+
+  final TextEditingController _textDateController = TextEditingController();
+  final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
+
   List<String> places = [
     "U.2.1",
     "U.2.2",
@@ -31,6 +33,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      key: _scaffoldStateKey,
       appBar: AppBar(
         title: Text(scheduleMenu),
       ),
@@ -193,7 +196,13 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
           width: double.infinity,
           child: RaisedButton(
               onPressed: () {
-                // do something
+                Navigator.pop(context);
+                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                  content: Text(
+                    "$scheduleMenu berhasil ditambahkan",
+                    style: TextStyle(color: textColor1, fontFamily: "Poppins"),
+                  ),
+                ));
               },
               color: accentColor,
               elevation: 0.0,
