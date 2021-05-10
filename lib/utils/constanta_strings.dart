@@ -41,6 +41,11 @@ const textPlace = "Ruangan";
 const textTime = "Waktu Pelaksanaan";
 
 const add = "Tambahkan";
+const edit = "Ubah";
+const save = "Simpan";
+const delete = "Hapus";
+const yes = "Ya, Hapus";
+const cancel = "Batal";
 const titleInfoCampusHint = "Masukan judul informasi kampus";
 const contentInfoCampusHint = "Masukan isi informasi kampus...";
 const titleNoteHint = "Masukan judul catatan";
@@ -52,3 +57,7 @@ const titleScheduleHint = "Masukan judul penelitian";
 const choosePlace = "Pilih Tempat";
 const chooseType = "Pilih Tipe";
 const chooseDate = "Pilih Tanggal";
+
+const titleDialogDelete = "Hapus Data";
+const subtitleDialogDelete =
+    "Data akan dihapus secara permanen, \nYakin nih mau dihapus ?";
