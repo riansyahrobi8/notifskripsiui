@@ -10,13 +10,13 @@ class AdminInfoCampusScreen extends StatefulWidget {
 }
 
 class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
-  final GlobalKey<ScaffoldState> scaffoldStateKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        key: scaffoldStateKey,
+        key: _scaffoldStateKey,
         appBar: AppBar(
           title: Text(homeMenu),
         ),
@@ -47,7 +47,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
           ),
         ),
         body: AdminInfoCampusBody(
-          scaffoldStateKey: scaffoldStateKey,
+          scaffoldStateKey: _scaffoldStateKey,
         ));
   }
 
@@ -90,7 +90,7 @@ class _AdminInfoCampusScreenState extends State<AdminInfoCampusScreen> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
                   content: Text(
                     "$homeMenu berhasil ditambahkan",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

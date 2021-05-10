@@ -4,10 +4,25 @@ import 'package:intl/intl.dart';
 import 'package:notifskripsiui/models/data_model.dart';
 import 'package:notifskripsiui/ui/schedule/detail/detail_schedule_screen.dart';
 import 'package:notifskripsiui/utils/constanta_colors.dart';
+import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
-class AdminScheduleBody extends StatelessWidget {
+class AdminScheduleBody extends StatefulWidget {
+  final GlobalKey<ScaffoldState> scaffoldStateKey;
+
+  const AdminScheduleBody({Key key, this.scaffoldStateKey}) : super(key: key);
+
+  @override
+  _AdminScheduleBodyState createState() =>
+      _AdminScheduleBodyState(scaffoldStateKey);
+}
+
+class _AdminScheduleBodyState extends State<AdminScheduleBody> {
   final DateFormat dateFormat = DateFormat.yMMMMd();
+
+  final GlobalKey<ScaffoldState> _scaffoldStateKey;
+
+  _AdminScheduleBodyState(this._scaffoldStateKey);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +47,9 @@ class AdminScheduleBody extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => print("Hapus"),
+                        onTap: () => showDialog(
+                            context: context,
+                            builder: (_) => buildAlertDialog()),
                         child: Container(
                           padding: EdgeInsets.all(24.0),
                           decoration: BoxDecoration(
@@ -54,6 +71,97 @@ class AdminScheduleBody extends StatelessWidget {
                         dataAtSchedule[index].place,
                         dataAtSchedule[index].dateTime),
                   ))
+        ],
+      ),
+    );
+  }
+
+  AlertDialog buildAlertDialog() {
+    return AlertDialog(
+      title: Center(
+          child: Container(
+        padding: EdgeInsets.all(8.0),
+        decoration:
+            BoxDecoration(shape: BoxShape.circle, color: Colors.red[100]),
+        child: Icon(
+          Icons.delete_forever_rounded,
+          color: Colors.red,
+        ),
+      )),
+      content: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            titleDialogDelete,
+            style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: backgroundColor),
+          ),
+          SizedBox(height: getProportionateScreenWidth(16.0)),
+          Text(
+            subtitleDialogDelete,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12.0, color: textColor2),
+          ),
+          SizedBox(height: getProportionateScreenWidth(56.0)),
+          Row(
+            children: [
+              Flexible(
+                flex: 1,
+                child: RaisedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    elevation: 0.0,
+                    visualDensity: VisualDensity.compact,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(1000.0)),
+                    padding: EdgeInsets.symmetric(
+                      vertical: getProportionateScreenWidth(20.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        cancel,
+                        style: TextStyle(color: primaryColor, fontSize: 14.0),
+                      ),
+                    )),
+              ),
+              SizedBox(
+                width: getProportionateScreenWidth(8.0),
+              ),
+              Flexible(
+                flex: 1,
+                child: RaisedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                        content: Text(
+                          "$scheduleMenu berhasil dihapus",
+                          style: TextStyle(
+                              color: textColor1, fontFamily: "Poppins"),
+                        ),
+                      ));
+                    },
+                    color: accentColor,
+                    elevation: 0.0,
+                    visualDensity: VisualDensity.compact,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(1000.0)),
+                    padding: EdgeInsets.symmetric(
+                      vertical: getProportionateScreenWidth(20.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        yes,
+                        style: TextStyle(color: textColor1, fontSize: 14.0),
+                      ),
+                    )),
+              ),
+            ],
+          ),
         ],
       ),
     );

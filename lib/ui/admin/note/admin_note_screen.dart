@@ -14,6 +14,9 @@ class _AdminNoteScreenState extends State<AdminNoteScreen> {
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
   final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
 
+  final TextEditingController _suggestionEditingController =
+      TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -48,13 +51,13 @@ class _AdminNoteScreenState extends State<AdminNoteScreen> {
           color: textColor1,
         ),
       ),
-      body: AdminNoteBody(),
+      body: AdminNoteBody(
+        scaffoldStateKey: _scaffoldStateKey,
+      ),
     );
   }
 
   Widget buildForm() {
-    var _suggestionEditingController = TextEditingController();
-
     List<String> suggestionList = [
       "155410100",
       "155410101",

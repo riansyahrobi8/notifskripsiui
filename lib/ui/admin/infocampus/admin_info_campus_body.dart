@@ -20,12 +20,12 @@ class AdminInfoCampusBody extends StatefulWidget {
 class _AdminInfoCampusBodyState extends State<AdminInfoCampusBody> {
   final DateFormat dateFormat = DateFormat.yMMMMd();
 
-  final GlobalKey<ScaffoldState> scaffoldStateKey;
+  final GlobalKey<ScaffoldState> _scaffoldStateKey;
 
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
 
-  _AdminInfoCampusBodyState(this.scaffoldStateKey);
+  _AdminInfoCampusBodyState(this._scaffoldStateKey);
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +159,7 @@ class _AdminInfoCampusBodyState extends State<AdminInfoCampusBody> {
                 child: RaisedButton(
                     onPressed: () {
                       Navigator.pop(context);
-                      scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                      _scaffoldStateKey.currentState.showSnackBar(SnackBar(
                         content: Text(
                           "$homeMenu berhasil dihapus",
                           style: TextStyle(
@@ -300,7 +300,7 @@ class _AdminInfoCampusBodyState extends State<AdminInfoCampusBody> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
                   content: Text(
                     "$homeMenu berhasil diubah",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

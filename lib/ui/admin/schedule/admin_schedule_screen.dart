@@ -63,7 +63,9 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
           color: textColor1,
         ),
       ),
-      body: AdminScheduleBody(),
+      body: AdminScheduleBody(
+        scaffoldStateKey: _scaffoldStateKey,
+      ),
     );
   }
 
