@@ -31,6 +31,20 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
 
   _AdminNoteBodyState(this._scaffoldStateKey);
 
+  List<String> suggestionList = [
+    "155410100",
+    "155410101",
+    "155410102",
+    "155410103",
+    "155410104",
+    "155410105",
+    "155410106",
+    "155410107",
+    "155410108",
+    "155410109",
+    "155410110"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -264,20 +278,6 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
     _titleNoteController.text = title;
     _teacher1Controller.text = teacher1;
     _teacher2Controller.text = teacher2;
-
-    List<String> suggestionList = [
-      "155410100",
-      "155410101",
-      "155410102",
-      "155410103",
-      "155410104",
-      "155410105",
-      "155410106",
-      "155410107",
-      "155410108",
-      "155410109",
-      "155410110"
-    ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

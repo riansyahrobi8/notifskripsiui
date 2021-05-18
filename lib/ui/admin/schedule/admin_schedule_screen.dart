@@ -15,6 +15,8 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
   DateTime _selectedDate;
 
   final TextEditingController _textDateController = TextEditingController();
+  final TextEditingController _suggestionEditingController = TextEditingController();
+  
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
   final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
 
@@ -27,6 +29,20 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
     "B.1.1",
     "T.3.1",
     "T.3.2",
+  ];
+
+  List<String> suggestionList = [
+    "155410100",
+    "155410101",
+    "155410102",
+    "155410103",
+    "155410104",
+    "155410105",
+    "155410106",
+    "155410107",
+    "155410108",
+    "155410109",
+    "155410110"
   ];
 
   @override
@@ -70,22 +86,6 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
   }
 
   Widget buildForm() {
-    var _suggestionEditingController = TextEditingController();
-
-    List<String> suggestionList = [
-      "155410100",
-      "155410101",
-      "155410102",
-      "155410103",
-      "155410104",
-      "155410105",
-      "155410106",
-      "155410107",
-      "155410108",
-      "155410109",
-      "155410110"
-    ];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
