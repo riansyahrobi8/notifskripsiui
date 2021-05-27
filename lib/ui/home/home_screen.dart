@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     NoteScreen(),
   ];
 
-  final List<String> title = [scheduleMenu, homeMenu, noteMenu];
+  final List<String> title = [scheduleMenu, homeM, noteMenu];
 
   final _bottomNavBarItems = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         label: scheduleMenu),
     BottomNavigationBarItem(
-        icon: Icon(Icons.info_outline_rounded, size: 20.0), label: homeMenu),
+        icon: Icon(Icons.info_outline_rounded, size: 20.0), label: homeM),
     BottomNavigationBarItem(
         icon: Icon(Icons.receipt_long_rounded, size: 18.0), label: noteMenu),
   ];
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               _currentIndex == 0
                   ? scheduleMenu
                   : _currentIndex == 1
-                      ? homeMenu
+                      ? homeM
                       : noteMenu,
               style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
             ),
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(1000.0),
                   child: Image.asset(
-                    "assets/images/profile.png",
+                    "assets/images/profile2.png",
                     width: getProportionateScreenWidth(56.0),
                     height: getProportionateScreenWidth(56.0),
                     fit: BoxFit.cover,

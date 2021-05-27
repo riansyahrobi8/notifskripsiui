@@ -28,6 +28,7 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
   final TextEditingController _titleNoteController = TextEditingController();
   final TextEditingController _teacher1Controller = TextEditingController();
   final TextEditingController _teacher2Controller = TextEditingController();
+  final TextEditingController _teacher3Controller = TextEditingController();
 
   _AdminNoteBodyState(this._scaffoldStateKey);
 
@@ -76,7 +77,8 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
                                         child: buildForm(
                                             dataAtNote[index].titleNote,
                                             dataAtNote[index].notes.first,
-                                            dataAtNote[index].notes2.first)),
+                                            dataAtNote[index].notes2.first,
+                                            dataAtNote[index].notes3.first)),
                                   ),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
@@ -112,7 +114,8 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
                         dataAtNote[index].dateTime,
                         dataAtNote[index].titleNote,
                         dataAtNote[index].notes,
-                        dataAtNote[index].notes2),
+                        dataAtNote[index].notes2,
+                        dataAtNote[index].notes3),
                   ))
         ],
       ),
@@ -211,7 +214,7 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
   }
 
   GestureDetector buildItemContainer(BuildContext context, DateTime dateTime,
-      String titleNote, List notes1, List notes2) {
+      String titleNote, List notes1, List notes2, List notes3) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -223,6 +226,7 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
                       titleNote: titleNote,
                       notes: notes1,
                       notes2: notes2,
+                      notes3: notes3,
                     )));
       },
       child: Container(
@@ -274,10 +278,12 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
     );
   }
 
-  Widget buildForm(String title, String teacher1, String teacher2) {
+  Widget buildForm(
+      String title, String teacher1, String teacher2, String teacher3) {
     _titleNoteController.text = title;
     _teacher1Controller.text = teacher1;
     _teacher2Controller.text = teacher2;
+    _teacher3Controller.text = teacher3;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -354,6 +360,17 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
           keyboardType: TextInputType.multiline,
           maxLines: 8,
           decoration: buildInputDecorationArea(contentTeacher2Hint),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
+        )),
+        SizedBox(
+          height: getProportionateScreenWidth(16.0),
+        ),
+        Form(
+            child: TextFormField(
+          controller: _teacher3Controller,
+          keyboardType: TextInputType.multiline,
+          maxLines: 8,
+          decoration: buildInputDecorationArea(contentTeacher3Hint),
           style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(

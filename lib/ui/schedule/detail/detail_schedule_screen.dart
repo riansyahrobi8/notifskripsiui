@@ -9,7 +9,8 @@ class DetailScheduleScreen extends StatelessWidget {
   final String nim;
   final String title;
   final String teacher1;
-  final String otherTeacher;
+  final String teacher2;
+  final String teacher3;
   final String place;
   final DateTime dateTime;
   final DateFormat dateFormat = DateFormat.yMMMMd();
@@ -20,7 +21,8 @@ class DetailScheduleScreen extends StatelessWidget {
       this.nim,
       this.title,
       this.teacher1,
-      this.otherTeacher,
+      this.teacher2,
+      this.teacher3,
       this.place,
       this.dateTime})
       : super(key: key);
@@ -100,7 +102,19 @@ class DetailScheduleScreen extends StatelessWidget {
                 SizedBox(
                   height: getProportionateScreenHeight(4.0),
                 ),
-                Text(otherTeacher,
+                Text(teacher2,
+                    style: TextStyle(color: textColor1, fontSize: 18.0)),
+                SizedBox(
+                  height: getProportionateScreenHeight(24.0),
+                ),
+                Text(
+                  textTeacher3,
+                  style: TextStyle(fontSize: 14.0, color: textColor2),
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(4.0),
+                ),
+                Text(teacher3,
                     style: TextStyle(color: textColor1, fontSize: 18.0)),
                 SizedBox(
                   height: getProportionateScreenHeight(24.0),

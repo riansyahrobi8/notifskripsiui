@@ -147,6 +147,16 @@ class _AdminNoteScreenState extends State<AdminNoteScreen> {
           style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
+          height: getProportionateScreenWidth(16.0),
+        ),
+        Form(
+            child: TextFormField(
+          keyboardType: TextInputType.multiline,
+          maxLines: 8,
+          decoration: buildInputDecorationArea(contentTeacher3Hint),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
+        )),
+        SizedBox(
           height: getProportionateScreenWidth(24.0),
         ),
         SizedBox(

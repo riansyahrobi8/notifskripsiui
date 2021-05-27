@@ -16,15 +16,19 @@ const btnLogin = "Masuk";
 const btnRegister = "Daftar";
 const btnLogout = "Keluar";
 
+const homeM = "Beranda";
 const homeMenu = "Informasi Kampus";
 const scheduleMenu = "Jadwal";
 const noteMenu = "Catatan";
+const userMenu = "Pengguna";
 
 const subAdminInfoCampus =
     "Kamu bisa melihat, menambah, mengubah dan menghapus data informasi mengenai kampus";
 const subAdminSchedule =
     "Kamu bisa melihat, menambah, mengubah dan menghapus data penjadwalan";
 const subAdminNote =
+    "Kamu bisa melihat, menambah, mengubah dan menghapus data catatan";
+const subAdminUser =
     "Kamu bisa melihat, menambah, mengubah dan menghapus data catatan";
 
 const dashboardMenu = "Dashboard";
@@ -36,7 +40,8 @@ const textName = "Nama";
 const textNim = "NIM";
 const textTitle = "Judul";
 const textTeacher1 = "Dosen Pembimbing";
-const textTeacher2 = "Dosen Penguji";
+const textTeacher2 = "Dosen Penguji Pertama";
+const textTeacher3 = "Dosen Penguji Kedua";
 const textPlace = "Ruangan";
 const textTime = "Waktu Pelaksanaan";
 
@@ -50,7 +55,8 @@ const titleInfoCampusHint = "Masukan judul informasi kampus";
 const contentInfoCampusHint = "Masukan isi informasi kampus...";
 const titleNoteHint = "Masukan judul catatan";
 const contentTeacher1Hint = "Masukan catatan dari Dosen Pembimbing...";
-const contentTeacher2Hint = "Masukan catatan dari Dosen Penguji...";
+const contentTeacher2Hint = "Masukan catatan dari Dosen Penguji Pertama...";
+const contentTeacher3Hint = "Masukan catatan dari Dosen Penguji Kedua...";
 const searchStudent = "Masukan NIM mahasiswa...";
 const titleScheduleHint = "Masukan judul penelitian";
 

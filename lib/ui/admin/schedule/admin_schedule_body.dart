@@ -28,6 +28,7 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _teacher1Controller = TextEditingController();
   final TextEditingController _teacher2Controller = TextEditingController();
+  final TextEditingController _teacher3Controller = TextEditingController();
 
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
   final GlobalKey<ScaffoldState> _scaffoldStateKey;
@@ -90,8 +91,8 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
                                         child: buildForm(
                                             dataAtSchedule[index].title,
                                             dataAtSchedule[index].teacher1,
-                                            dataAtSchedule[index]
-                                                .otherTeacher)),
+                                            dataAtSchedule[index].teacher2,
+                                            dataAtSchedule[index].teacher3)),
                                   ),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
@@ -128,7 +129,8 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
                         dataAtSchedule[index].nim,
                         dataAtSchedule[index].title,
                         dataAtSchedule[index].teacher1,
-                        dataAtSchedule[index].otherTeacher,
+                        dataAtSchedule[index].teacher2,
+                        dataAtSchedule[index].teacher3,
                         dataAtSchedule[index].place,
                         dataAtSchedule[index].dateTime),
                   ))
@@ -234,7 +236,8 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
       String nim,
       String title,
       String teacher1,
-      String otherTeacher,
+      String teacher2,
+      String teacher3,
       String place,
       DateTime dateTime) {
     return GestureDetector(
@@ -248,7 +251,8 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
                       nim: nim,
                       title: title,
                       teacher1: teacher1,
-                      otherTeacher: otherTeacher,
+                      teacher2: teacher2,
+                      teacher3: teacher3,
                       place: place,
                       dateTime: dateTime,
                     )));
@@ -306,10 +310,12 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
     );
   }
 
-  Widget buildForm(String title, String teacher1, String teacher2) {
+  Widget buildForm(
+      String title, String teacher1, String teacher2, String teacher3) {
     _titleController.text = title;
     _teacher1Controller.text = teacher1;
     _teacher2Controller.text = teacher2;
+    _teacher3Controller.text = teacher3;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

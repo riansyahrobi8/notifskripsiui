@@ -9,10 +9,16 @@ class DetailNoteScreen extends StatelessWidget {
   final String titleNote;
   final List<String> notes;
   final List<String> notes2;
+  final List<String> notes3;
   final DateFormat dateFormat = DateFormat.yMMMMd();
 
   DetailNoteScreen(
-      {Key key, this.dateTime, this.titleNote, this.notes, this.notes2})
+      {Key key,
+      this.dateTime,
+      this.titleNote,
+      this.notes,
+      this.notes2,
+      this.notes3})
       : super(key: key);
 
   @override
@@ -82,6 +88,24 @@ class DetailNoteScreen extends StatelessWidget {
                       notes2.length,
                       (index) => TextSpan(
                           text: "${index + 1}. ${notes2[index]}\n\n",
+                          style: TextStyle(
+                              color: textColor1,
+                              fontSize: 14.0,
+                              fontFamily: "Poppins")))
+                ])),
+                Text(
+                  textTeacher3,
+                  style: TextStyle(fontSize: 14.0, color: textColor2),
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(4.0),
+                ),
+                RichText(
+                    text: TextSpan(children: [
+                  ...List.generate(
+                      notes3.length,
+                      (index) => TextSpan(
+                          text: "${index + 1}. ${notes3[index]}\n\n",
                           style: TextStyle(
                               color: textColor1,
                               fontSize: 14.0,

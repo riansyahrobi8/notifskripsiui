@@ -10,3 +10,4 @@ const dashboard = "/dashboard";
 const adminInfoCampus = "/adminInfoKampus";
 const adminNote = "/adminNote";
 const adminSchedule = "/adminSchedule";
+const adminUser = "/adminUser";

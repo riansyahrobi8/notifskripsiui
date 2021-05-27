@@ -15,8 +15,9 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
   DateTime _selectedDate;
 
   final TextEditingController _textDateController = TextEditingController();
-  final TextEditingController _suggestionEditingController = TextEditingController();
-  
+  final TextEditingController _suggestionEditingController =
+      TextEditingController();
+
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
   final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
 
@@ -156,6 +157,15 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
             child: TextFormField(
           keyboardType: TextInputType.text,
           decoration: buildInputDecoration(textTeacher2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
+        )),
+        SizedBox(
+          height: getProportionateScreenWidth(16.0),
+        ),
+        Form(
+            child: TextFormField(
+          keyboardType: TextInputType.text,
+          decoration: buildInputDecoration(textTeacher3),
           style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(

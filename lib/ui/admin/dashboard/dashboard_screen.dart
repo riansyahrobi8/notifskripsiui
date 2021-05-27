@@ -25,7 +25,7 @@ class DashboardScreen extends StatelessWidget {
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(1000.0),
                   child: Image.asset(
-                    "assets/images/profile.png",
+                    "assets/images/profile2.png",
                     width: getProportionateScreenWidth(56.0),
                     height: getProportionateScreenWidth(56.0),
                     fit: BoxFit.cover,

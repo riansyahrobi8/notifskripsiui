@@ -7,13 +7,12 @@ import 'package:notifskripsiui/utils/constanta_strings.dart';
 class DashboardBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(getProportionateScreenWidth(24.0)),
-      child: Column(
-        children: [
-          Expanded(
-            flex: 1,
-            child: GestureDetector(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.all(getProportionateScreenWidth(24.0)),
+        child: Column(
+          children: [
+            GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, adminInfoCampus);
               },
@@ -43,13 +42,10 @@ class DashboardBody extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: getProportionateScreenWidth(24.0),
-          ),
-          Expanded(
-            flex: 1,
-            child: GestureDetector(
+            SizedBox(
+              height: getProportionateScreenWidth(24.0),
+            ),
+            GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, adminSchedule);
               },
@@ -79,13 +75,10 @@ class DashboardBody extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: getProportionateScreenWidth(24.0),
-          ),
-          Expanded(
-            flex: 1,
-            child: GestureDetector(
+            SizedBox(
+              height: getProportionateScreenWidth(24.0),
+            ),
+            GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, adminNote);
               },
@@ -115,8 +108,41 @@ class DashboardBody extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: getProportionateScreenWidth(24.0),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, adminUser);
+              },
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: textFieldAndCardColor,
+                    borderRadius: BorderRadius.circular(
+                        getProportionateScreenWidth(24.0))),
+                child: Padding(
+                  padding: EdgeInsets.all(getProportionateScreenWidth(24.0)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(userMenu,
+                          style: TextStyle(fontSize: 20, color: textColor1)),
+                      SizedBox(
+                        height: getProportionateScreenHeight(8.0),
+                      ),
+                      Text(
+                        subAdminUser,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

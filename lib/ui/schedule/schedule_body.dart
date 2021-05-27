@@ -24,7 +24,8 @@ class ScheduleBody extends StatelessWidget {
                   dataAtSchedule[index].nim,
                   dataAtSchedule[index].title,
                   dataAtSchedule[index].teacher1,
-                  dataAtSchedule[index].otherTeacher,
+                  dataAtSchedule[index].teacher2,
+                  dataAtSchedule[index].teacher3,
                   dataAtSchedule[index].place,
                   dataAtSchedule[index].dateTime))
         ],
@@ -38,7 +39,8 @@ class ScheduleBody extends StatelessWidget {
       String nim,
       String title,
       String teacher1,
-      String otherTeacher,
+      String teacher2,
+      String teacher3,
       String place,
       DateTime dateTime) {
     return GestureDetector(
@@ -52,7 +54,8 @@ class ScheduleBody extends StatelessWidget {
                       nim: nim,
                       title: title,
                       teacher1: teacher1,
-                      otherTeacher: otherTeacher,
+                      teacher2: teacher2,
+                      teacher3: teacher3,
                       place: place,
                       dateTime: dateTime,
                     )));
