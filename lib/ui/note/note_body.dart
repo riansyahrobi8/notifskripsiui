@@ -23,14 +23,15 @@ class NoteBody extends StatelessWidget {
                   dataAtNote[index].dateTime,
                   dataAtNote[index].titleNote,
                   dataAtNote[index].notes,
-                  dataAtNote[index].notes2))
+                  dataAtNote[index].notes2,
+                  dataAtNote[index].notes3))
         ],
       ),
     );
   }
 
   GestureDetector buildItemContainer(BuildContext context, DateTime dateTime,
-      String titleNote, List notes1, List notes2) {
+      String titleNote, List notes1, List notes2, List notes3) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -42,6 +43,7 @@ class NoteBody extends StatelessWidget {
                       titleNote: titleNote,
                       notes: notes1,
                       notes2: notes2,
+                      notes3: notes3,
                     )));
       },
       child: Container(

@@ -377,6 +377,8 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
         ),
         Form(
             child: TextFormField(
+          onTap: () => _showDialog(),
+          readOnly: true,
           keyboardType: TextInputType.text,
           controller: _teacher1Controller,
           decoration: buildInputDecoration(textTeacher1),
@@ -387,9 +389,23 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
         ),
         Form(
             child: TextFormField(
+          onTap: () => _showDialog(),
+          readOnly: true,
           keyboardType: TextInputType.text,
           controller: _teacher2Controller,
           decoration: buildInputDecoration(textTeacher2),
+          style: TextStyle(color: textColor2, fontSize: 16.0),
+        )),
+        SizedBox(
+          height: getProportionateScreenWidth(16.0),
+        ),
+        Form(
+            child: TextFormField(
+          onTap: () => _showDialog(),
+          readOnly: true,
+          keyboardType: TextInputType.text,
+          controller: _teacher3Controller,
+          decoration: buildInputDecoration(textTeacher3),
           style: TextStyle(color: textColor2, fontSize: 16.0),
         )),
         SizedBox(
@@ -459,6 +475,81 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
         ),
       ],
     );
+  }
+
+  void _showDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            contentPadding: EdgeInsets.all(getProportionateScreenWidth(16.0)),
+            titlePadding: EdgeInsets.only(
+                right: getProportionateScreenWidth(16.0),
+                left: getProportionateScreenWidth(16.0),
+                top: getProportionateScreenWidth(16.0)),
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  chooseTeacher,
+                  style: TextStyle(
+                      fontSize: getProportionateScreenWidth(14.0),
+                      color: textColor2),
+                ),
+                SizedBox(height: getProportionateScreenWidth(16.0)),
+                Form(
+                    child: TextFormField(
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(
+                          horizontal: getProportionateScreenWidth(16.0),
+                          vertical: getProportionateScreenWidth(4.0)),
+                      filled: true,
+                      fillColor: textColor1,
+                      border: InputBorder.none,
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              getProportionateScreenWidth(8.0)),
+                          borderSide: BorderSide.none),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              getProportionateScreenWidth(8.0)),
+                          borderSide: BorderSide.none),
+                      hintText: seacrhTeacher,
+                      hintStyle: TextStyle(
+                          fontSize: getProportionateScreenWidth(16.0),
+                          color: textColor2)),
+                )),
+              ],
+            ),
+            content: ListView.builder(
+                itemCount: 100,
+                itemBuilder: (context, index) => Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: getProportionateScreenWidth(16.0)),
+                      child: Text("Bambang Promosidi",
+                          style: TextStyle(
+                              color: textColor2,
+                              fontSize: getProportionateScreenWidth(16.0))),
+                    )),
+            actions: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      right: getProportionateScreenWidth(16.0),
+                      bottom: getProportionateScreenWidth(8.0)),
+                  child: Text(close,
+                      style: TextStyle(
+                          color: primaryColor,
+                          fontWeight: FontWeight.w700,
+                          fontSize: getProportionateScreenWidth(16.0))),
+                ),
+              ),
+            ],
+          );
+        });
   }
 
   InputDecoration buildInputDecoration(String type) {

@@ -67,3 +67,6 @@ const chooseDate = "Pilih Tanggal";
 const titleDialogDelete = "Hapus Data";
 const subtitleDialogDelete =
     "Data akan dihapus secara permanen, \nYakin nih mau dihapus ?";
+const chooseTeacher = "Pilih Dosen";
+const seacrhTeacher = "Cari Dosen";
+const close = "Tutup";
