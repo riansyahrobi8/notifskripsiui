@@ -8,24 +8,16 @@ import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
 class AdminInfoCampusBody extends StatefulWidget {
-  final GlobalKey<ScaffoldState> scaffoldStateKey;
-
-  const AdminInfoCampusBody({Key key, this.scaffoldStateKey}) : super(key: key);
-
   @override
   _AdminInfoCampusBodyState createState() =>
-      _AdminInfoCampusBodyState(scaffoldStateKey);
+      _AdminInfoCampusBodyState();
 }
 
 class _AdminInfoCampusBodyState extends State<AdminInfoCampusBody> {
   final DateFormat dateFormat = DateFormat.yMMMMd();
 
-  final GlobalKey<ScaffoldState> _scaffoldStateKey;
-
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
-
-  _AdminInfoCampusBodyState(this._scaffoldStateKey);
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +151,7 @@ class _AdminInfoCampusBodyState extends State<AdminInfoCampusBody> {
                 child: RaisedButton(
                     onPressed: () {
                       Navigator.pop(context);
-                      _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
                           "$homeMenu berhasil dihapus",
                           style: TextStyle(
@@ -300,7 +292,7 @@ class _AdminInfoCampusBodyState extends State<AdminInfoCampusBody> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     "$homeMenu berhasil diubah",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

@@ -9,13 +9,9 @@ import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
 class AdminScheduleBody extends StatefulWidget {
-  final GlobalKey<ScaffoldState> scaffoldStateKey;
-
-  const AdminScheduleBody({Key key, this.scaffoldStateKey}) : super(key: key);
-
   @override
   _AdminScheduleBodyState createState() =>
-      _AdminScheduleBodyState(scaffoldStateKey);
+      _AdminScheduleBodyState();
 }
 
 class _AdminScheduleBodyState extends State<AdminScheduleBody> {
@@ -31,9 +27,6 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
   final TextEditingController _teacher3Controller = TextEditingController();
 
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
-  final GlobalKey<ScaffoldState> _scaffoldStateKey;
-
-  _AdminScheduleBodyState(this._scaffoldStateKey);
 
   List<String> places = [
     "U.2.1",
@@ -200,7 +193,7 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
                 child: RaisedButton(
                     onPressed: () {
                       Navigator.pop(context);
-                      _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
                           "$scheduleMenu berhasil dihapus",
                           style: TextStyle(
@@ -449,7 +442,7 @@ class _AdminScheduleBodyState extends State<AdminScheduleBody> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     "$scheduleMenu berhasil diubah",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

@@ -19,7 +19,6 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
       TextEditingController();
 
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
-  final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
 
   List<String> places = [
     "U.2.1",
@@ -50,7 +49,6 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      key: _scaffoldStateKey,
       appBar: AppBar(
         title: Text(scheduleMenu),
       ),
@@ -81,7 +79,6 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
         ),
       ),
       body: AdminScheduleBody(
-        scaffoldStateKey: _scaffoldStateKey,
       ),
     );
   }
@@ -215,7 +212,7 @@ class _AdminScheduleScreenState extends State<AdminScheduleScreen> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     "$scheduleMenu berhasil ditambahkan",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

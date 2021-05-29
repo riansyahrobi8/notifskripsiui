@@ -78,3 +78,29 @@ List<NoteModel> dataAtNote = [
   NoteModel(DateTime.now(), "Catatan Revisi Skripsi", "Opri Nasrullah",
       "155410100", [lorem, lorem], [lorem, lorem], [lorem, lorem, lorem]),
 ];
+
+class User {
+  final String name;
+  final String noid;
+  final String type;
+
+  User(this.name, this.noid, this.type);
+}
+
+List<User> dataUsers = [
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Pius Dianggoro S.Kom., M.Cs. jsdhgfjhg", "155410100", "Dosen"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Ilham Rais Irvanto S.Pd.", "155410100", "Dosen"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Pius Dianggoro S.Kom., M.Cs.", "155410100", "Dosen"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Ilham Rais Irvanto S.Pd.", "155410100", "Dosen"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Pius Dianggoro S.Kom., M.Cs.", "155410100", "Dosen"),
+  User("Opri Nasrullah", "155410100", "Mahasiswa"),
+  User("Ilham Rais Irvanto S.Pd.", "155410100", "Dosen"),
+];

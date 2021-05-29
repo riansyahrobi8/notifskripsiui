@@ -9,12 +9,8 @@ import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
 class AdminNoteBody extends StatefulWidget {
-  final GlobalKey<ScaffoldState> scaffoldStateKey;
-
-  const AdminNoteBody({Key key, this.scaffoldStateKey}) : super(key: key);
-
   @override
-  _AdminNoteBodyState createState() => _AdminNoteBodyState(scaffoldStateKey);
+  _AdminNoteBodyState createState() => _AdminNoteBodyState();
 }
 
 class _AdminNoteBodyState extends State<AdminNoteBody> {
@@ -22,15 +18,12 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
 
   final GlobalKey<AutoCompleteTextFieldState> key =
       GlobalKey<AutoCompleteTextFieldState>();
-  final GlobalKey<ScaffoldState> _scaffoldStateKey;
 
   final TextEditingController _nimController = TextEditingController();
   final TextEditingController _titleNoteController = TextEditingController();
   final TextEditingController _teacher1Controller = TextEditingController();
   final TextEditingController _teacher2Controller = TextEditingController();
   final TextEditingController _teacher3Controller = TextEditingController();
-
-  _AdminNoteBodyState(this._scaffoldStateKey);
 
   List<String> suggestionList = [
     "155410100",
@@ -183,7 +176,7 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
                 child: RaisedButton(
                     onPressed: () {
                       Navigator.pop(context);
-                      _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
                           "$noteMenu berhasil dihapus",
                           style: TextStyle(
@@ -381,7 +374,7 @@ class _AdminNoteBodyState extends State<AdminNoteBody> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     "$noteMenu berhasil diubah",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

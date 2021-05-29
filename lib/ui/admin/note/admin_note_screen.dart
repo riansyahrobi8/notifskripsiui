@@ -12,7 +12,6 @@ class AdminNoteScreen extends StatefulWidget {
 
 class _AdminNoteScreenState extends State<AdminNoteScreen> {
   final GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
-  final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
 
   final TextEditingController _suggestionEditingController =
       TextEditingController();
@@ -35,7 +34,6 @@ class _AdminNoteScreenState extends State<AdminNoteScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      key: _scaffoldStateKey,
       appBar: AppBar(
         title: Text(noteMenu),
       ),
@@ -65,9 +63,7 @@ class _AdminNoteScreenState extends State<AdminNoteScreen> {
           color: textColor1,
         ),
       ),
-      body: AdminNoteBody(
-        scaffoldStateKey: _scaffoldStateKey,
-      ),
+      body: AdminNoteBody(),
     );
   }
 
@@ -164,7 +160,7 @@ class _AdminNoteScreenState extends State<AdminNoteScreen> {
           child: RaisedButton(
               onPressed: () {
                 Navigator.pop(context);
-                _scaffoldStateKey.currentState.showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     "$noteMenu berhasil ditambahkan",
                     style: TextStyle(color: textColor1, fontFamily: "Poppins"),

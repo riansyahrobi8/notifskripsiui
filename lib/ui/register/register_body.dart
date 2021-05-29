@@ -131,7 +131,9 @@ class _RegisterBodyState extends State<RegisterBody> {
           child: SizedBox(
             width: double.infinity,
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                // do something
+              },
               color: accentColor,
               elevation: 0.0,
               shape: RoundedRectangleBorder(

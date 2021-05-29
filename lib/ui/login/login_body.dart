@@ -6,7 +6,7 @@ import 'package:notifskripsiui/utils/constanta_strings.dart';
 import 'package:notifskripsiui/utils/size_config.dart';
 
 class LoginBody extends StatelessWidget {
-  final String user = "Admin";
+  final String user = "Adin";
 
   @override
   Widget build(BuildContext context) {
