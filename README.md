@@ -17,7 +17,7 @@ Berikut bebarapa *packages* tambahan yang digunakan dalam membangun aplikasi ini
 ---
 ## *Screenshots*
 | *Images*                                                                                                                                   | Nama                      | *User Access* |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- | ------------- |
 | <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="100%" />           | Tampilan *Login*          | Admin         |
 | <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/register_screen.png" width="100%" />        | Tampilan *Register*       | Admin         |
 | <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/admin_dashboard_screen.png" width="100%" /> | Tampilan *Dashboard Menu* | Admin         |
