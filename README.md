@@ -16,5 +16,7 @@ Berikut bebarapa *packages* tambahan yang digunakan dalam membangun aplikasi ini
 
 ---
 ## *Screenshots*
-1. Tapmilan Login<img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="25%" />
-<img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="50%" />
+| Gambar                                                                                                                          | Nama             |
+| ------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="25%" /> | Tampilan *Login* |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="25%" /> | Tampilan *Login* |
