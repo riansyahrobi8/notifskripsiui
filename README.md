@@ -16,7 +16,11 @@ Berikut bebarapa *packages* tambahan yang digunakan dalam membangun aplikasi ini
 
 ---
 ## *Screenshots*
-| Gambar                                                                                                                           | Nama             |
-| -------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="100%" /> | Tampilan *Login* |
-| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="100%" /> | Tampilan *Login* |
+| *Images*                                                                                                                                   | Nama                      | *User Access* |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="100%" />           | Tampilan *Login*          | Admin         |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/register_screen.png" width="100%" />        | Tampilan *Register*       | Admin         |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/admin_dashboard_screen.png" width="100%" /> | Tampilan *Dashboard Menu* | Admin         |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/admin_data_screen.png" width="100%" />      | Tampilan *Read Data*      | Admin         |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/admin_add_data_screen.png" width="100%" />  | Tampilan *Create Data*    | Admin         |
+| <img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/admin_delete_screen.png" width="100%" />    | Tampilan *Delete Data*    | Admin         |
