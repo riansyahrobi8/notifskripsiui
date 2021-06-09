@@ -1,6 +1,6 @@
 # **Notif Skripsi (User Interface)**
 Ini merupakan tampilan atau *User Interface* (UI) dari sebuah aplikasi bernama Notif Skripsi UI. *User access* aplikasi terdiri dari Admin dan Mahasiswa. Terdapat fitur CRUD *(Create, Read, Update and Delete)* yang hanya bisa dilakukan oleh *user access* admin, sedangkan untuk *user access* mahasiswa hanya dapat menampilkan data yang telah diinputkan oleh admin. Terdapat fitur lain seperti *Register*, *Login* dan *Logout* serta *Profile*.
----
+
 ---
 ## Flutter *version*
 [**Flutter**](https://flutter.dev/docs/get-started/install) *version* 2.2.0
@@ -16,4 +16,4 @@ Berikut bebarapa *packages* tambahan yang digunakan dalam membangun aplikasi ini
 
 ---
 ## *Screenshots*
-![Tampilan Login](https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png)
+![Tampilan Login](https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png | widht=50%)
