@@ -16,4 +16,5 @@ Berikut bebarapa *packages* tambahan yang digunakan dalam membangun aplikasi ini
 
 ---
 ## *Screenshots*
-![Tampilan Login](https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png | widht=50%)
+<img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="50%" />
+<img src="https://github.com/riansyahrobi8/notifskripsiui/blob/master/assets/images/screenshot/login_screen.png" width="50%" />
